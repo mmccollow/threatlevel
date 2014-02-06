@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>GTHA Commuter Threat Level</title>
+		<link type="text/css" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" />
+		<link type="text/css" rel="stylesheet" href="{{ stylecss }}" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="threatlevel">
+				<h2>GTHA Commuter Threat Level</h2>
+				<div class="threatlevel_tick disabled" id="severe">
+					<p class="label">Severe</p>
+					<p class="blurb">
+						An accident reported every 3 minutes or less.
+					</p>
+				</div>
+				<div class="threatlevel_tick disabled" id="moderate">
+					<p class="label">Moderate</p>
+					<p class="blurb">
+						An accident reported every 3-10 minutes.
+					</p>
+				</div>
+				<div class="threatlevel_tick disabled" id="low">
+					<p class="label">Low</p>
+					<p class="blurb">
+						An accident reported every 10+ minutes.
+					</p>
+				</div>
+			</div>
+		</div>
+		<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+		<script>
+			var status = {{ status }};
+			if (status == 1) {
+				$('#low').removeClass('disabled').addClass('enabled');
+			} else if (status ==2) {
+				$('#moderate').removeClass('disabled').addClass('enabled');
+			} else if (status == 3) {
+				$('#severe').removeClass('disabled').addClass('enabled');
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+.threatlevel {
+	margin:auto;
+	height: 600px;
+	width: 500px;
+}
+
+.threatlevel > h2 {
+	text-align:center;
+}
+
+.threatlevel_tick {
+	height:33%;
+	width:100%;
+	color:#CCC;
+}
+
+.threatlevel_tick > p.label {
+	color:#CCC;
+	font-weight:600;
+	font-size:2em;
+	text-indent:7px;
+}
+
+.threatlevel_tick > p.blurb {
+	text-indent:18px;
+}
+
+.disabled {
+	opacity:0.1;
+}
+
+.enabled {
+	opacity:1;
+}
+
+#severe {
+	background: rgba(255, 0, 0, 1);
+	border-radius:20px 20px 0px 0px;
+}
+
+#moderate {
+	background: rgba(255, 165, 0, 1);
+}
+
+#low {
+	background: rgba(255, 255, 0, 1);
+	border-radius:0px 0px 20px 20px;
+}

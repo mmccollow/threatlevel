@@ -18,6 +18,7 @@ t = Twitter(auth=OAuth(oauth_token, oauth_secret, CONSUMER_KEY, CONSUMER_SECRET)
 def index():
 	incidents = []
 	tweets = t.statuses.user_timeline(screen_name='OPP_GTATraffic')
+	tweets = tweets[:-10]
 	for tweet in tweets:
 		if findall('MVC|collision', tweet['text']) != []:
 			incidents.append(parser.parse(tweet['created_at']))
